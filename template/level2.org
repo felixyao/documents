@@ -1,0 +1,4 @@
+#+INFOJS_OPT: path:../../js/org-info.js
+#+INFOJS_OPT: toc:t ltoc:t view:info mouse:underline buttons:nil
+#+INFOJS_OPT: home:../index.html
+#+HTML_HEAD: <link rel="stylesheet" href="../../css/worg.css" type="text/css" />

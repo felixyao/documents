@@ -1,0 +1,7 @@
+#+SETUPFILE: ../../template/level2.org
+
+#+TITLE: Orgnize my life by org-mode
+* What is org 
+* How does this matter
+* HEHE
+
