@@ -1,7 +1,31 @@
 #+SETUPFILE: ../../template/level2.org
 
 #+TITLE: Orgnize my life by org-mode
-* What is org 
-* How does this matter
-* HEHE
+* What is Org mode
++ [[http://orgmode.org/][Org mode]] is a major mode in Emacs and it is designed for keeping nodes, maitaining TODO lists. And it is also used for authoring documents. 
++ Org mode keep everything in a plain text format so it is really fast and effective to maintain. 
+* How I use Org mode 
++ I'm using Org mode for differents purposes:
+  1. Keeping todo list for both my work and family.
+  2. Record the time for my working tasks.
+  3. Weekly review and daily review. 
+  4. Maintain my personal blog.
++ To achieve these goals I need to correct configurate my Emacs. My Emacs configurations are in github [[https://github.com/felixyao/dotemacs][dotemacs]]. you can fetch them by git commands:
+#+BEGIN_SRC bash
+git clone git://github.com/felixyao/dotemacs.git
+#+END_SRC
+And How I using Org mode is highly inprised by this article [[http://doc.norang.ca/org-mode.html][Org Mode - Organize Your Life In Plain Text!]]
+* Create Tasks
+** Create Tasks During weekly review
+** Capture a idea
+** routine tasks
+* Working on a Task
+* Organize a project
+* Clocking
+* Daily review
+* Weekly review
+* Archive tasks have doen
+
+
+
 
