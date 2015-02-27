@@ -14,18 +14,107 @@
 #+BEGIN_SRC bash
 git clone git://github.com/felixyao/dotemacs.git
 #+END_SRC
-And How I using Org mode is highly inprised by this article [[http://doc.norang.ca/org-mode.html][Org Mode - Organize Your Life In Plain Text!]]
+Another very good example to use org mode [[http://doc.norang.ca/org-mode.html][Org Mode - Organize Your Life In Plain Text!]]
 * Create Tasks
+** Org files used for keeping todo list
+Here is the org files I'm using for keep all my todo list
+| filename  | Todos                     |
+| work.org  | tasks releated to my work |
+| todo.org  | personal tasks            |
+| dairy.org | record some time[fn:1]    |
+The first Heading is the category of tasks here is a example of my todo.org:
+#+BEGIN_EXAMPLE
+ * Special Datas
+ * Finaces
+ * Tasks
+ ...
+#+END_EXAMPLE
+Usually I don't check the task in the files, and during [[*Weekly%20review][Weekly review]] I will go though the files to make sure 
+All tasks are belongs to the suit category.
 ** Create Tasks During weekly review
+During [[*Weekly review][Weekly review]] I go through todo.org and work.org files to catch the ideas which in my mind to put them into my GTD system.
 ** Capture a idea
-** routine tasks
-* Working on a Task
+Org capture mode is a great tool to catch the idea comes to my mind in a sudden. when a idea comes I type a command to echo 
+a capture menu, and choose a task type. Then Emacs will lanuch a caputre buffer for me to edit the task. after that I can 
+type a command to record the task to the right place in my org files.
++ Commands to echo the capture menu:
+#+BEGIN_SRC bash
+C-c c
+#+END_SRC
+
++ Commands to choose task template in capture menu:
+
+| command | Todo                                                                 |
+| t       | Create a personal task and put into todo.org/Tasks                   |
+| w       | Create a working task and put into work.org/Tasks                    |
+| i       | Create a Interuption task [fn:2] and put into work.org/Interruptions |
+| m       | Create a task for meeting work.org/meetings                          |
+| j       | Create a janural record what i have done [fn:3] into dairy.org |
+
++ Commands to record the captured task:
+
+| command |                                                               |
+| C-c C-c | Store the task to the default place according to the template |
+| C-c C-k | Delete the captured task                                      |
+| C-c C-w | Store the task and choose a place                             |
+  
+* Following the todo list
+** The agenda view 
+I customnize a agenda view as my todo list. The agenda view include four parts. the first one is the agenda for today it shows the tasks I have to be done today in 
+specific time, the sceond is the tasks that need to be planned.  after that is a task list I have to do recently but not necessary to be done today. the followed part
+is the tasks that I have delegated to someone else. last part is the tasks I have done 2 weeks ago.
+The agenda view is echoed by the command:
+#+BEGIN_EXAMPLE
+C-c a space
+#+END_EXAMPLE
+In principle, I choose a task to do by go through the agenda view from top to button.
+First I finished the tasks have been scheduled. then I start to plan the tasks have been planed. Planning a task usually I don't take care how to do it but just 
+decide is the task could be done right now(schedule it or put it into todo list): is the task is too complicate and better make more steps for it(Create a [[*Organize%20a%20project][Project]]):
+is someone else better then I'm to do it (delegate it): After all task is correctly orgnized the I go though the todo list choose the one most important or most intersing 
+to do. the [[*Daily%20review][delegate view]] and [[*Archive doen tasks][Archive view]] is checked while [[*Daily review][Daily review]].
+** Task states
+Setting tasks state by the command:
+
+#+BEGIN_EXAMPLE
+C-c C-t
+#+END_EXAMPLE
+Task states and the meaning:
+
+| state      |                                     |
+| TODO       | have not been planned               |
+| NEXT       | In the todo list                    |
+| SCHEDULED  | In schedule view                    |
+| PROJECT    | bounch of tasks                     |
+| DELEGATE   | delegate to someone else            |
+| SUBPROJECT | bounch of tasks belong to a project |
+| SOMEDAY    | Ideas don't want to do it now       |
+| DONE       | done                                |
+| CANCELLED  | tasks which are not need to be done |
+
+Some special event will also triggle task states change:
+
++ When set a repeat task to done, it will automatic change to SCHEDULED 
++ When a NEXT in a project set to done will automatic set a next TODO task to NEXT
+
 * Organize a project
+A project is a state for a task and it is also means a bounch of tasks that have to be done step by step. Here is a example, You want to join a party in your friend's home
+And you don't know where he lives. then you need to do 3 things. 1) make a call to make sure the time and route to there. 2) task a bus 3) been there and enjoy the party.
+The tasks should be like this:
+
+#+BEGIN_EXAMPLE
+* PROJECT join party
+** NEXT make a call
+** TODO goto ada's home
+** TODO enjoy the party
+#+END_EXAMPLE
+I introduce the project concept into my system is to clean my todo list
 * Clocking
 * Daily review
 * Weekly review
-* Archive tasks have doen
-
+* Archive doen tasks
+[fn:1] See[[*Clocking][ Clocking]]
+[fn:2] The task while capturing will be clocked, see [[*Clocking][Clocking]]
+[fn:3] The janurals are something not for any purpose such as go to toilet break and lunch this is only used for time report see [[*Clocking][Clocking]]
 
 
 
