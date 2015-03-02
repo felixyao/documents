@@ -96,25 +96,127 @@ Some special event will also triggle task states change:
 + When set a repeat task to done, it will automatic change to SCHEDULED 
 + When a NEXT in a project set to done will automatic set a next TODO task to NEXT
 
+It is very important that I should keep my todo list clean, Idealy any task in the list doesn't require any prerequest, That's not always ture. 
+If I can't do the task because I need get more information from someone else then I put this task in DELEGATE:
+If I this task have to happen in special data. for example Holidays, Weekends, I SCHEDULED this task: 
+If I need do something first before I can do this I will make it a [[*Organize project][Project]].
+If I just don't do it now, I will put it SOMEDAY. 
 * Organize a project
 A project is a state for a task and it is also means a bounch of tasks that have to be done step by step. Here is a example, You want to join a party in your friend's home
 And you don't know where he lives. then you need to do 3 things. 1) make a call to make sure the time and route to there. 2) task a bus 3) been there and enjoy the party.
 The tasks should be like this:
 
 #+BEGIN_EXAMPLE
-* PROJECT join party
-** NEXT make a call
-** TODO goto ada's home
-** TODO enjoy the party
+ * PROJECT join party
+ ** NEXT make a call
+ ** TODO goto ada's home
+ ** TODO enjoy the party
 #+END_EXAMPLE
-I introduce the project concept into my system is to clean my todo list
+
+The main reason behind that I need a PRJECT is I want to keep my todo list clean, It always thows the task really need some attention. By using PROJECT setting, I don't need to 
+see the tasks I can't take any activities right now. If I finished some task the next step will aotumatic shows. 
+
 * Clocking
+Clocking a task means to record how many time I spent on a task. This is a really good feature for org-mode. It is handy to generate a time report base on day/week/month. This kind of 
+Report is really useful for daily and week review. 
+** Clock a task
+You can start a clock on one task by two commands :
+
+#+BEGIN_EXAMPLE
+C-c C-x C-i  #when the couser on one outline head 
+I        #In agenda view 
+#+END_EXAMPLE
+
+When you set the task state to done or can stop clocking on this task by the command:
+
+#+BEGIN_EXAMPLE
+C-c C-x C-o  #when the couser on one outline head 
+O        #In agenda view 
+#+END_EXAMPLE
+
+After record a time you a logbook item will be added to the tasks like this:
+#+BEGIN_EXAMPLE
+ ** TODO Interrupt by:liselott for:  software download reconnect
+   :LOGBOOK:  
+    CLOCK: [2015-03-02 må 13:14]--[2015-03-02 må 13:17] =>  0:03
+   :END:      
+#+END_EXAMPLE
+
+** Handle Interuption 
+It is very likely to happen that While I doing something . Someone ask me a question or to do something else. I will using the caputure command to capture a interupption. 
+and switch to doing that. After finish the interupt task. I type C-c C-c to resume the clock to the one I previous working on.
+
+** Orgnize task
+I want my time report accruacy and completely. I introduce the Orgnize task. this is a special task as "default", that means if no task else is under clocking. the time will clock on this 
+one. to enable this, I need a extra command called clock in:
+#+BEGIN_EXAMPLE
+C-z i
+#+END_EXAMPLE
+
+Every morning When I start work. I will type this command, And it will continue to record every minute of the day. 
+#+BEGIN_EXAMPLE
+C-z o
+#+END_EXAMPLE
+This is the one to close all the clock is running include the default one. this is the command I used every evening I finish all day's job.
+
+** Ease way to find the record history
+Some times I want to do the task I previously working on(most case is a meeting because the captured meeting task will not automitic resume clock to the previous one).
+I can use this command:
+#+BEGIN_EXAMPLE
+C-u C-x C-i 
+#+END_EXAMPLE
+This command will echo the clock history view, I can easily find the previours clocked tasks.
+
 * Daily review
+I have a special scheduled task for daily review. It happens every weekdays. This is a drawback for org-mode that I can't set a conditional repeated task. so I have to assign five tasks 
+And make all of them repeat once a week on different days. 
+The main purpose for daily review is: 
++ Check the tasks status, and category, refile the tasks if needed.
++ Check the clocked time by the command:
+
+#+BEGIN_EXAMPLE
+v c #in the agenda view
+#+END_EXAMPLE
+
++ Generate the time report.
+
+#+BEGIN_EXAMPLE
+C-c a E
+#+END_EXAMPLE
+
++ Prepare the tasks for the next day.
+
 * Weekly review
+According to the GTD theroy weekly review is a key activity to maintain the whole system run and working. This is also a special SCHEDULED task. 
+The purpose why I do weekly review is :
++ Make sure all the task is in the correct place.
++ Make sure all the thing needs my attention is in the system.
++ Make sure all the tasks in the system make some progress. 
+
+For these purposes I have another customer agenda view called review view it is eoched by the command:
+#+BEGIN_EXAMPLE
+C-c a r
+#+END_EXAMPLE
+The advise from the personal management bible "get things done" is every week we need at least a whole afternoon to do the weekly review. It is very diffcault for me 
+the have a seperate whole afternoon, but I still try to manage my self 2 hours per week to do it. 
+And I realize that some hints indicate my system is clapsing. 
++ Something important suddenly comes to my mind. I can't find it.
++ I realize that some good idea I thought before but not recored.
++ Some task just stay in my todo list for 3 weeks. 
+I still working on that to make this system more sensitive if this hints happens.
 * Archive doen tasks
+Archive tasks will remove my tasks form my org files to a org_archive file. and it will never be shown in any of my org files again. 
+It is done by the command:
+#+BEGIN_EXAMPLE
+a y
+#+END_EXAMPLE
+Note that archive task not just means change the task and get rid of it. but also is a great chance to see the task again. it also a reminder 
+that I need put something to my wiki system, some new knowledge new way. Almost every task I have been working hard worth some more effort to rethink 
+about it and record something. I don't do it very well now and continus improve on it.
 [fn:1] See[[*Clocking][ Clocking]]
 [fn:2] The task while capturing will be clocked, see [[*Clocking][Clocking]]
 [fn:3] The janurals are something not for any purpose such as go to toilet break and lunch this is only used for time report see [[*Clocking][Clocking]]
+
 
 
 
