@@ -1,0 +1,73 @@
+#+SETUPFILE: ../../template/level2.org
+#+TITLE: My Computer Applications
+* Basic Applications
+| name                | system      |
+|---------------------+-------------|
+| git                 | all         |
+| dorpbox             | all         |
+| evernote[fn:1]      | windows mac |
+| google chrome[fn:2] | all         |
+| google pinyin       | windows     |
+| emacs[fn:3]         | all         |
+| graphviz            | all         |
+| 7zip                | windows     |
+
+* Software development Applications
+| name    | system      |
+|---------+-------------|
+| racket  | windows mac |
+| guile   | linux       |
+| jdk     | all         |
+| python  | all         |
+| eclipse | all         |
+| mingw   | windows     |
+
+* Working Applications
+| name     | system  |
+|----------+---------|
+| putty    | windows |
+| PIwin    | windows |
+| NXClient | windows |
+| hansoft  | windows |
+| citrix   | windows |
+
+* Global Enviornment variables
+| name         | system  | value                 |
+|--------------+---------+-----------------------|
+| HOME         | windows | c:/User/username      |
+|              | linux   | normal                |
+|              | mac     | normal                |
+|--------------+---------+-----------------------|
+| ComSpec      | windows | path to cmd.exe       |
+|--------------+---------+-----------------------|
+| GRAPHVIZ_DOT | windows | path to dot.exe       |
+|--------------+---------+-----------------------|
+
+* Common file structure in home directory
+| folder             | contents                                         |
+|--------------------+--------------------------------------------------|
+| Download           | default download folder                          |
+| Documents/Personal | personal documents                               |
+| Document/work      | work related documents like time_report some log |
+| Documents/Tech     | Kownledge Technology documents                   |
+| Pictures           | photo and picture                                |
+| TEMP               | Temp folder                                      |
+| workspace          | Test code software development                   |
+| org-source[fn:4]   | blog source files                                |
+| .emacs.d[fn:5]     | emacs configuration files                        |
+
+* Footnotes
+
+[fn:1] user count felix.yao.china@gmail.com
+
+[fn:2] user count felix.yao.china@gmail.com
+
+[fn:3] for windows maybe need updata GnuTLS to get mplea work
+
+[fn:4] maintained in github https://github.com/felixyao/documents.git
+
+[fn:5] maintained in github https://github.com/felixyao/dotemacs.git
+
+ 
+
+  
