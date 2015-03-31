@@ -30,6 +30,7 @@
 | NXClient | windows |
 | hansoft  | windows |
 | citrix   | windows |
+| meld     | windows |
 
 * Global Enviornment variables
 | name         | system  | value                 |
